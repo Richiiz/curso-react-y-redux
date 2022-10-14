@@ -1,0 +1,6 @@
+state define UI
+en la UI el usuario dispara una acción
+la acción es mandada al reducer
+el reducer actualiza el store
+el store contiene al state
+volvemos al paso 1
