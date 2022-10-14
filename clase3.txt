@@ -1,0 +1,19 @@
+4.-Diferencias entre Redux y Context
+–
+Redux facilita el manejo del estado y lo hace mas predecible y rastreable.
+
+–
+React propone Context API:
+
+Proporciona una forma de pasar datos de los componentes padres a los componentes hijos mediante el arbol de componentes sin pasar manualmente por todos los niveles.
+Está diseñado para compartir los datos que pueden ser considerados globales.
+Podemos usarlo cuando vamos a hacer uso de datos que generalmente no cambiarán mucho a lo largo del uso de la app. Como el modo, tema, idioma o usuario autentificado.
+Se puede usar a partir de la versión 16.3 de React.
+–
+Redux vs Context API
+
+Depuración: Con el depurador de Redux podemos “viajar en el tiempo” en cambio Context API al tener conectado todo al mismo provider es más dificil de depurar.
+Bundle Size: Context viene integrado y no necesitas librerias adicionales. Con redux, si, por lo que crece el bundle size de la app.
+Middlewares: Redux tiene una forma sencilla de extender la funcionabilidad de nuestros triggers o distpachers que nos permite agregar middlewares que atajen la data en cierto punto antes de que llegue a cambiar el estado.
+Curva de aprendizaje: Context API tiene una curva de aprendizaje más ligera. Con redux tenemos que aprender un nuevo paradigma, entender el ciclo de vida de los datos y aprender sobre la sintaxis.
+Rendering: Redux nos permite prevenir renders innecesarios.
