@@ -4,3 +4,13 @@ la acción es mandada al reducer
 el reducer actualiza el store
 el store contiene al state
 volvemos al paso 1
+
+
+
+
+El estado describe la condición actual de la aplicación, este estado “vive” dentro del store.
+La vista o UI se renderiza basada en este estado y cuando un evento (como un click) pasa el estado se actualiza basado en lo que pasó.
+No se actualiza directamente, es “disparado” hacía el reducer que es el encargado de saber como se actualizará el estado. Luego de que 
+el cambio pasa y el estado se actualiza la UI se re-renderiza basada en el estado.
+–
+Redux es una libreria “agnostica”, es decir, puede ser usada con cualquier capa en la UI o framework.
