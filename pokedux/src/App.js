@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
+import { connect} from 'react-redux';
 import { Col } from 'antd';
 import Searcher from './components/Searcher';
 import PokemonList from './components/pokemonList';
 import { getPokemon } from './api';
+import { setPokemons as setPokemonsActions } from './actions';
 import logo from './statics/logo.svg';
 import './App.css';
 
 
-function App() {
-  const [pokemons, setPokemons] = useState([]);
+function App({pokemons, setPokemons}) {
+  console.log("🚀 ~ file: App.js ~ line 12 ~ App ~ pokemons", pokemons)
   useEffect(() => {
     const fetchPokemons = async() =>{
       const pokemonsRes = await getPokemon();
@@ -16,7 +18,7 @@ function App() {
     };
 
     fetchPokemons();
-  }, [])
+  }, []);
   return ( 
   <div className="App">
     <Col span={4} offset={10}>
@@ -30,4 +32,15 @@ function App() {
   );
 }
 
-export default App;
+//es una funcion que recibe el estado y retorna un objeto cuyas propiedades van a ser enviadas a los props del componente que se esta conectando a ridux
+const mapStateToProps = (state)=> ({
+  pokemons: state.pokemons,
+});
+
+//una funcion recibe el dispacher de ridux y retorna un objeto que va a ser mapeadoa a nuestras propiedades pero con los actions creators que hemos establecido
+const mapDispatchToProps = (dispatch) =>({
+  setPokemons: (value) => dispatch(setPokemonsActions(value)),
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
