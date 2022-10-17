@@ -1,0 +1,13 @@
+MIDDLEWARES
+es una pieza de codigo que se ejecuta entre que algo recibe un request y ese algo da respuesta a ese request
+
+
+GLOSARIO
+Store creator: es una funcion que crea nuestra store de Redux
+enhancer: son los potenciadores del store, estos son una funcion de orden superior que toma un store creator y devuelve una version potenciada de ese creador del store
+compose: utilidad de programacion funcional que combina funciones de derecha a izquierda y esto se susa para tener muultiples potenciadores del store.
+
+
++ info => https://es.redux.js.org/docs/glosario.html
+          
+          https://es.redux.js.org/docs/api/compose.html
