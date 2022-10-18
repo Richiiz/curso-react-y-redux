@@ -11,17 +11,18 @@ export const pokemonsReducer = (state = initialState, action) => {
             return state.setIn(['pokemons'], fromJS(action.payload));
         case SET_FAVORITE:
             const currentPokemonIndex = state.get('pokemons').findIndex(
-                (pokemon) => {
-                    return pokemon.get('id') === action.payload.pokemonId;
-                });
+            (pokemon) => {
+                return pokemon.get('id') === action.payload.pokemonId;
+            });
 
-                if(currentPokemonIndex < 0){
-                    return state
-                }
+            if(currentPokemonIndex < 0){
+                return state
+            }
 
 
-                const isFavorite = state.getIn(['pokemons', 
-                currentPokemonIndex, 'favorite',]); 
+            const isFavorite = state.getIn(['pokemons', 
+                currentPokemonIndex, 'favorite',
+            ]); 
 
                 return state.setIn(['pokemons', currentPokemonIndex, 
                 'favorite'], !isFavorite);
